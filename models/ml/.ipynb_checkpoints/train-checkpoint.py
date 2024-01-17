@@ -5,9 +5,9 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import GradientBoostingClassifier
 
 
-iris = datasets.load_iris(return_X_y=True)
-y = iris[1]
-X = iris[0]
+face = datasets.load_iris(return_X_y=True)
+y = face[1]
+X = face[0]
 
 
 clf_pipeline = [('scaling', MinMaxScaler()), ('clf', GradientBoostingClassifier())]
@@ -15,4 +15,4 @@ pipeline = Pipeline(clf_pipeline)
 
 pipeline.fit(X, y)
 
-dump(pipeline, './ml/iris_dt_v1.joblib')
+dump(pipeline, './ml/face_dt_v1.joblib')
